@@ -133,6 +133,8 @@ export const AboutMeSection = styled.section`
 
   #profile {
     border-radius: 50%;
+    min-width: 0;
+    height: auto;
   }
 `;
 

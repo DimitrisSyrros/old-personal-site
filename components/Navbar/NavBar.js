@@ -4,7 +4,7 @@ import DownloadFile from "../DownloadFile/DownloadFile"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faFilePdf} from "@fortawesome/free-regular-svg-icons";
 import {faBars, faTimes, faMoon, faSun} from "@fortawesome/free-solid-svg-icons";
-import useDarkMode from "use-dark-mode";
+import useDarkMode from "../../hooks/useDarkMode";
 
 const Navbar = (props) => {
     const darkMode = useDarkMode(true);
@@ -22,7 +22,7 @@ const Navbar = (props) => {
                 <NavOption onClick={()=>{navigateTo(props.refs.homeRef);}}>Home</NavOption>
                 <NavOption onClick={()=>{navigateTo(props.refs.aboutMeRef)}}>About Me</NavOption>
                 <NavOption onClick={()=>{navigateTo(props.refs.contactRef)}}>Contact</NavOption>
-                <NavOption><DownloadFile src="/cv.pdf"><FontAwesomeIcon icon={faFilePdf} color={"#eaeaea"} title={"cv-download"} /></DownloadFile></NavOption>
+                <NavOption><DownloadFile src="/cv.pdf" title="cv-download"><FontAwesomeIcon icon={faFilePdf} color={"#eaeaea"} /></DownloadFile></NavOption>
                 <NavOption><FontAwesomeIcon onClick={darkMode.toggle} icon={darkMode.value === true ? faMoon : faSun} /></NavOption>
             </NavContent>
             <BurgerNav icon={faBars} color={"#eaeaea"} onClick={()=>setOpenNav(!openNav)}/>

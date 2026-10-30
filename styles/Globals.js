@@ -31,6 +31,11 @@ export const darkTheme = {
 }
 
 export const GlobalStyle = createGlobalStyle`
+  /* FontAwesome 7 gives icons a fixed width by default; keep the natural width of earlier versions */
+  svg.svg-inline--fa {
+    --fa-width: auto;
+  }
+
   html,
   body {
     padding: 0;
